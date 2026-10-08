@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://bxh80wfaahjnu"]
+
+[ext_resource type="Texture2D" uid="uid://b6nhrnn05a864" path="res://Captura_de_tela_2026-10-08_145834-removebg-preview.png" id="1_4flbx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_onrkg"]
+atlas = ExtResource("1_4flbx")
+region = Rect2(0, 0, 126, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3pqv"]
+atlas = ExtResource("1_4flbx")
+region = Rect2(126, 0, 126, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqtel"]
+atlas = ExtResource("1_4flbx")
+region = Rect2(252, 0, 126, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sweqy"]
+atlas = ExtResource("1_4flbx")
+region = Rect2(378, 0, 126, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1ay17"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_onrkg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3pqv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqtel")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sweqy")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ea68l"]
+size = Vector2(111, 91)
+
+[node name="player" type="CharacterBody2D" unique_id=1634215514]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=327655943]
+sprite_frames = SubResource("SpriteFrames_1ay17")
+frame_progress = 0.69661456
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1186608489]
+position = Vector2(4.5, 0.5)
+shape = SubResource("RectangleShape2D_ea68l")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=149738925]
